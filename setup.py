@@ -5,6 +5,10 @@ except ImportError:
 
 from KINCluster import __version__
 
+with open('requirements.txt') as f:
+    requires = f.read().splitlines()
+
+
 setup(
     name = 'KINCluster',
     packages = ['KINCluster' ,'KINCluster/core', 'KINCluster/lib'],
@@ -18,16 +22,14 @@ setup(
     url = 'https://github.com/MaybeS/KINCluster',
     keywords = ['KINCluster', 'cluster', 'documents' 'doc2vec', 'tokenize', 'korean'],
 
-    install_requires=[
-        'gensim==0.13.4.1',
-        'konlpy>=0.4.4',
-        'scipy>=0.19.0',
-        'numpy>=1.12.1+mkl'
-    ],
+    install_requires=requires,
 
     classifiers=(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ),
 
     entry_points={

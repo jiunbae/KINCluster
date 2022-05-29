@@ -2,9 +2,15 @@
 Cluster core library classes and functions.
 """
 
-__all__ = ['cluster', 'extractor', 'item', 'pipeline']
+from KINCluster.core.cluster import Cluster
+from KINCluster.core.extractor import Extractor
+from KINCluster.core.item import Item
+from KINCluster.core.pipeline import Pipeline
 
-from KINCluster.core import cluster 
-from KINCluster.core import extractor
-from KINCluster.core import item
-from KINCluster.core import pipeline
+
+__all__ = [
+    'Cluster',
+    'Extractor',
+    'Item',
+    'Pipeline',
+]

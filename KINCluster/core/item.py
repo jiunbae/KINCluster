@@ -1,6 +1,7 @@
 from typing import List, Any
 from collections import OrderedDict
 
+
 class Item:
     def __init__(self, **kwargs):
         """item elements is ordered dict
@@ -11,7 +12,7 @@ class Item:
             try:
                 setattr(self, key, value)
             except:
-                raise "do not use item key like 'keys', 'items' or dumplicated key"
+                raise "do not use item key like 'keys', 'items' or duplicated key"
             self.__e[key] = value
 
     def __str__(self) -> str:

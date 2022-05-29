@@ -1,12 +1,16 @@
 import codecs
-from os import listdir
-from os.path import join, dirname
+from pathlib import Path
+
+
 
 def __get_stopwords():
-    stopwords_dir = join(dirname(__file__), 'stopwords')
+    stopwords_dir = Path(__file__).parent.joinpath('stopwords')
     words = set()
-    for file_name in listdir(stopwords_dir):
-        for word in codecs.open(join(stopwords_dir, file_name), "r", "utf-8").readlines():
-            words.add(word)
-    return map(lambda x: x.strip(), words)
+    for file_name in stopwords_dir.iterdir():
+        with codecs.open(str(file_name), 'r', encoding='utf-8') as f:
+            ctx = f.readlines()
+        words.update(map(str.strip, ctx))
+    return words
+
+
 stopwords = list(__get_stopwords())

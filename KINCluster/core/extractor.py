@@ -1,9 +1,10 @@
+import re
 from typing import List, Union
 from math import log10 as normalize
 from collections import Counter
 from itertools import chain
 from functools import reduce
-import re
+
 
 from KINCluster.core.item import Item
 from KINCluster.lib.tokenizer import stemize, is_noun
